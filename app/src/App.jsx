@@ -31,13 +31,12 @@ export default function App() {
                     }
                 />
 
-                {/* Servicios: temporalmente sin candado de sesión mientras
-                    se construye el módulo; se reactivará ProtectedRoute
-                    (con roles) cuando se integre con Empleados/Citas. */}
+                {/* Servicios */}
                 <Route path="servicios" element={<ServiciosPage />} />
                 <Route path="servicios/nuevo" element={<CreateServicioPage />} />
                 <Route path="servicios/:id" element={<ServicioDetailPage />} />
                 <Route path="servicios/:id/editar" element={<EditServicioPage />} />
+                
                 <Route
                     path="adicionales"
                     element={
@@ -65,7 +64,7 @@ export default function App() {
                     }
                 />
 
-                {/* Citas: Administrador y Empleado gestionan, Cliente solo consulta/cancela */}
+                {/* Citas */}
                 <Route
                     path="citas"
                     element={
