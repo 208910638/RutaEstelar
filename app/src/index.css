@@ -5,7 +5,6 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-<<<<<<< HEAD
   --background: #eef1f7;
   --foreground: #141b2e;
   --card: #ffffff;
@@ -41,8 +40,6 @@
   --sidebar-accent-foreground: #1c2740;
   --sidebar-border: #d3d9e4;
   --sidebar-ring: #a97a2e;
-
-=======
   --background: #f8f8f8;
   --foreground: #1d293d;
   --card: #ffffff;
@@ -74,8 +71,6 @@
   --sidebar-accent-foreground: #364050;
   --sidebar-border: #d0d4db;
   --sidebar-ring: #6468f0;
-  
->>>>>>> b2c166aa14a778dcaaaf27ccb47aadf87e1879ce
   --shadow-2xs: 0px 4px 8px -1px rgb(0 0 0 / 0.05);
   --shadow-xs: 0px 4px 8px -1px rgb(0 0 0 / 0.05);
   --shadow-sm: 0px 4px 8px -1px rgb(0 0 0 / 0.10), 0px 1px 2px -2px rgb(0 0 0 / 0.10);
@@ -87,7 +82,6 @@
 }
 
 .dark {
-<<<<<<< HEAD
   --background: #090d18;
   --foreground: #ece7da;
   --card: #10182b;
@@ -119,8 +113,6 @@
   --sidebar-accent-foreground: #ece7da;
   --sidebar-border: #21304a;
   --sidebar-ring: #d1a355;
-
-=======
   --background: #0f182b;
   --foreground: #e3e8ef;
   --card: #1d293d;
@@ -152,8 +144,6 @@
   --sidebar-accent-foreground: #d0d4db;
   --sidebar-border: #4b5666;
   --sidebar-ring: #818cf9;
-  
->>>>>>> b2c166aa14a778dcaaaf27ccb47aadf87e1879ce
   --shadow-2xs: 0 1px 3px 0px rgb(0 0 0 / 0.05);
   --shadow-xs: 0 1px 3px 0px rgb(0 0 0 / 0.05);
   --shadow-sm: 0 1px 3px 0px rgb(0 0 0 / 0.10), 0 1px 2px -1px rgb(0 0 0 / 0.10);
@@ -163,12 +153,7 @@
   --shadow-xl: 0 1px 3px 0px rgb(0 0 0 / 0.10), 0 8px 10px -1px rgb(0 0 0 / 0.10);
   --shadow-2xl: 0 1px 3px 0px rgb(0 0 0 / 0.25);
 }
-
-<<<<<<< HEAD
 @theme {
-=======
-@theme inline {
->>>>>>> b2c166aa14a778dcaaaf27ccb47aadf87e1879ce
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -187,8 +172,6 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-
-<<<<<<< HEAD
   --font-sans: "Manrope", "Segoe UI", sans-serif;
   --font-serif: "Fraunces", "Georgia", serif;
   --font-mono: "IBM Plex Mono", "SFMono-Regular", monospace;
@@ -199,13 +182,11 @@
   --radius-lg: 0.625rem;
   --radius-xl: calc(0.625rem * 1.4);
   --radius-2xl: calc(0.625rem * 1.8);
-=======
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) * 1.4);
   --radius-2xl: calc(var(--radius) * 1.8);
-
   --shadow-2xs: var(--shadow-2xs);
   --shadow-xs: var(--shadow-xs);
   --shadow-sm: var(--shadow-sm);
@@ -214,14 +195,12 @@
   --shadow-lg: var(--shadow-lg);
   --shadow-xl: var(--shadow-xl);
   --shadow-2xl: var(--shadow-2xl);
->>>>>>> b2c166aa14a778dcaaaf27ccb47aadf87e1879ce
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
-<<<<<<< HEAD
 
   body {
     @apply bg-background text-foreground;
@@ -259,9 +238,8 @@
         color-mix(in oklch, var(--primary), transparent 20%) 35%,
         color-mix(in oklch, var(--primary), transparent 20%) 65%,
         transparent);
-=======
+  }
   body {
     @apply bg-background text-foreground;
->>>>>>> b2c166aa14a778dcaaaf27ccb47aadf87e1879ce
   }
 }
