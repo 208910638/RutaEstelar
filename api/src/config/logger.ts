@@ -1,8 +1,26 @@
 import winston from "winston";
 import "winston-daily-rotate-file";
 
+// Helper para asegurar que la información completa del Error no se pierda al serializar a JSON
+const errorFormatter = winston.format((info) => {
+    if (info instanceof Error) {
+        return Object.assign({}, info, {
+            message: info.message,
+            stack: info.stack,
+        });
+    }
+    if (info.error instanceof Error) {
+        info.error = Object.assign({}, info.error, {
+            message: info.error.message,
+            stack: info.error.stack,
+        });
+    }
+    return info;
+});
+
 const logFormat = winston.format.combine(
     winston.format.timestamp({ format: "YYYY-MM-DD HH:mm:ss.SSS" }),
+    errorFormatter(), // Formatea el Error correctamente
     winston.format.errors({ stack: true }),
     winston.format.splat(),
     winston.format.json()
@@ -11,15 +29,18 @@ const logFormat = winston.format.combine(
 const consoleFormat = winston.format.combine(
     winston.format.colorize(),
     winston.format.timestamp({ format: "YYYY-MM-DD HH:mm:ss" }),
-    winston.format.printf(({ timestamp, level, message, stack }) => {
-        return stack
-            ? `${timestamp} ${level}: ${message}\n${stack}`
+    winston.format.printf((info: any) => {
+        const { timestamp, level, message, stack, error } = info;
+        // Muestra el stack o la propiedad message del error capturado
+        const detail = stack || (error && error.stack) || (error && error.message) || "";
+        return detail
+            ? `${timestamp} ${level}: ${message}\n${detail}`
             : `${timestamp} ${level}: ${message}`;
     })
 );
 
 export const logger = winston.createLogger({
-    level: "info",
+    level: "debug",
     format: logFormat,
     transports: [
         new winston.transports.DailyRotateFile({
